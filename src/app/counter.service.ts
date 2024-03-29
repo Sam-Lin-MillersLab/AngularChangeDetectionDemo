@@ -11,7 +11,7 @@ export class CounterService {
   constructor() {}
   incCounter() {
     this.counter.count++;
-    // this.counterSubject.next(this.counter);
+    this.counterSubject.next(this.counter);
   }
   get counter$() {
     return this.counterSubject.asObservable();
