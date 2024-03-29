@@ -30,7 +30,7 @@ import { Grandchild2Component } from './grandchild2.component';
   ],
   standalone: true,
   imports: [Grandchild1Component, Grandchild2Component],
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Child1Component {
   logCD() {

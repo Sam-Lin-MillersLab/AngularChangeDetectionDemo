@@ -20,7 +20,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     `,
   ],
   standalone: true,
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Child2Component {
   bgColor = 'lightblue';

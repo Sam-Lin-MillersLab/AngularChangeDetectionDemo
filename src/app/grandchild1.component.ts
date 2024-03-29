@@ -22,7 +22,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     `,
   ],
   standalone: true,
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Grandchild1Component {
   counter = 0;

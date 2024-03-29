@@ -28,7 +28,7 @@ import { Child2Component } from './child2.component';
   ],
   standalone: true,
   imports: [Child1Component, Child2Component],
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   logCD() {

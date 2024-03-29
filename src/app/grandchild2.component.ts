@@ -24,7 +24,7 @@ import { FormsModule } from '@angular/forms';
   ],
   standalone: true,
   imports: [CommonModule, FormsModule],
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Grandchild2Component {
   name = '';
