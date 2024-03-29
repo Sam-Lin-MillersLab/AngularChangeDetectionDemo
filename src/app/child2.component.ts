@@ -3,10 +3,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 @Component({
   selector: 'app-child2',
   template: `
-    <div>
-      <h2>Child 2 Component</h2>
-      {{ logCD() }}
-    </div>
+    <h2>Child 2 Component</h2>
+    {{ logCD() }}
   `,
   styles: [
     `

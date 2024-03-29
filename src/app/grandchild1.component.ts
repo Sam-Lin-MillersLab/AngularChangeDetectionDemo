@@ -3,12 +3,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 @Component({
   selector: 'app-grandchild1',
   template: `
-    <div>
-      <h3>Grandchild 1 Component</h3>
-      <p>Counter: {{ counter }}</p>
-      <button (click)="incCounter()">Inc Counter</button>
-      {{ logCD() }}
-    </div>
+    <h3>Grandchild 1 Component</h3>
+    <p>Counter: {{ counter }}</p>
+    <button (click)="incCounter()">Inc Counter</button>
+    {{ logCD() }}
   `,
   styles: [
     `
