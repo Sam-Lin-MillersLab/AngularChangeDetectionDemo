@@ -5,13 +5,18 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class CounterService {
-  counterSubject = new BehaviorSubject<number>(0);
+  counter = { count: 0 };
+  counterSubject = new BehaviorSubject<Counter>(this.counter);
 
   constructor() {}
   incCounter() {
-    this.counterSubject.next(this.counterSubject.value + 1);
+    this.counter.count++;
+    // this.counterSubject.next(this.counter);
   }
   get counter$() {
     return this.counterSubject.asObservable();
   }
+}
+export interface Counter {
+  count: number;
 }

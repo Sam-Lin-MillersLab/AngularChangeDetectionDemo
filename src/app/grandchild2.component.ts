@@ -8,7 +8,7 @@ import { CounterService } from './counter.service';
   template: `
     <div>
       <h3>Grandchild 2 Component</h3>
-      <div>global counter: {{ counterService.counter$ | async }}</div>
+      <div>global counter: {{ counterService.counter$ | async | json }}</div>
       <input type="text" [(ngModel)]="name" placeholder="Enter your name" />
       {{ logCD() }}
     </div>

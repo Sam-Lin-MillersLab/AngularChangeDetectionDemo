@@ -1,4 +1,4 @@
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, JsonPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Child1Component } from './child1.component';
 import { Child2Component } from './child2.component';
@@ -9,7 +9,7 @@ import { CounterService } from './counter.service';
   template: `
     <h1>Root Component</h1>
     <button (click)="incCounter()">global counter</button>
-    <p>Counter: {{ counterService.counter$ | async }}</p>
+    <p>Counter: {{ counterService.counter$ | async | json }}</p>
     <div class="root">
       <app-child1></app-child1>
       <app-child2></app-child2>
@@ -31,12 +31,17 @@ import { CounterService } from './counter.service';
     `,
   ],
   standalone: true,
-  imports: [AsyncPipe, Child1Component, Child2Component],
+  imports: [AsyncPipe, Child1Component, Child2Component, JsonPipe],
   providers: [CounterService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   counterService = inject(CounterService);
+  constructor() {
+    this.counterService.counter$.subscribe((counter) => {
+      console.log('Root Component - Counter: ', { counter });
+    });
+  }
   incCounter() {
     this.counterService.incCounter();
   }
