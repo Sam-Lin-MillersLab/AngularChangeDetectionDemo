@@ -5,11 +5,9 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-grandchild2',
   template: `
-    <div>
-      <h3>Grandchild 2 Component</h3>
-      <input type="text" [(ngModel)]="name" placeholder="Enter your name" />
-      {{ logCD() }}
-    </div>
+    <h3>Grandchild 2 Component</h3>
+    <input type="text" [(ngModel)]="name" placeholder="Enter your name" />
+    {{ logCD() }}
   `,
   styles: [
     `

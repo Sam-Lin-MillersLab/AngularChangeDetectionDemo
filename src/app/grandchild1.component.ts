@@ -3,12 +3,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 @Component({
   selector: 'app-grandchild1',
   template: `
-    <div>
-      <h3>Grandchild 1 Component</h3>
-      <p>Counter: {{ counter }}</p>
-      <button (click)="incCounter()">Inc Counter</button>
-      {{ logCD() }}
-    </div>
+    <h3>Grandchild 1 Component</h3>
+    <p>Counter: {{ counter.count }}</p>
+    <button (click)="incCounter()">Inc Counter</button>
+    {{ logCD() }}
   `,
   styles: [
     `
@@ -25,9 +23,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Grandchild1Component {
-  counter = 0;
+  counter = { count: 0 };
   incCounter() {
-    this.counter++;
+    this.counter.count++;
   }
   logCD() {
     console.log('Grandchild 1 Component - Change Detection');
