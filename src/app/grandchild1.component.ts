@@ -29,7 +29,7 @@ import { GrandGrandchild1Component } from './grandgrandchild1.component';
 export class Grandchild1Component {
   counter = { count: 0 };
   incCounter() {
-    this.counter.count++;
+    this.counter = { count: this.counter.count + 1 };
   }
   logCD() {
     console.log('Grandchild 1 Component - Change Detection');
