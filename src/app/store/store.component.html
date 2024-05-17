@@ -1,0 +1,32 @@
+@if(!store.isLoading()) {
+
+  @if(store.filteredBooks().length === 0) {
+    <p>No books found</p>
+  } @else if(store.filteredBooks().length > 1){
+    <div class="list">
+      <select [(ngModel)]="selected" (change)='updateOrder($event)'>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+    </div>
+  }
+  
+  <div class="list">
+    <input type="text" [(ngModel)]="query" (input)="updateQuery($event)">
+  </div>
+  
+
+  <p>Total Books : {{store.booksCount()}}</p> 
+
+  @for (item of store.filteredBooks(); track $index) {
+    <div class="list">
+      <p>Title {{ item.title }}</p>
+      <p>Author: {{ item.author }}</p>
+    </div>
+  }
+} @else {
+  <p>Loading...</p>
+}
+
+
+  

@@ -1,0 +1,23 @@
+<p>Basic Signal Update</p>
+
+<p>{{ currentCount() }}</p>
+
+
+<p>Regular Count: {{ regularCount }}</p>
+<p>{{ regularCurrentCount() }}</p>
+
+
+<div class="list">
+  <button (click)="increment()">Increment Count</button>
+  <button (click)="decrement()">Decrement Count</button>
+</div>
+
+<div class="list">
+  <input type="number" [(ngModel)]="iCount" placeholder="Enter a value" />
+  <button (click)="set(iCount)">Set Count</button>
+</div>
+
+
+<div class="list">
+    <button (click)="reset()">Reset Count</button>
+</div>

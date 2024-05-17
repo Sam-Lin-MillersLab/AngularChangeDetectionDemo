@@ -1,0 +1,12 @@
+<p>View Children</p>
+
+<p>{{ childStatus() }}</p>
+
+@for (item of divCount; track $index) {
+<div #div [style.color]="signalEl().count() >= 0 ? 'green' : 'red'">
+{{$index}}
+</div>
+}
+
+
+<app-signal #el> </app-signal>

@@ -1,0 +1,27 @@
+<h1>Parent Component</h1>
+<p>Input Demo</p>
+
+<div class="list">
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName" [(ngModel)]="firstName">
+</div>
+
+<div class="list">
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" [(ngModel)]="lastName">
+</div>
+
+
+
+<div class="list">
+  <label for="isAdmin">Is Admin:</label>
+  <input type="checkbox" id="isAdmin" [(ngModel)]="isAdmin">
+</div>
+
+
+
+
+<app-child [fn]="firstName()"[(isAdmin)]="isAdmin" [lastName]="lastName()" (personChanged)="onPersonChange($event)" (isAdminChange)="onAdminChange()" shouldBeBool></app-child>
+
+
+<!-- [(lastName)]="lastName" -->

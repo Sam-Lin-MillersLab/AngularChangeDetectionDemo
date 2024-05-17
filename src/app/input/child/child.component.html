@@ -1,0 +1,13 @@
+<h1>Child Component</h1>
+<p>{{ displayName() }}</p>
+
+<div class="list">
+  <label for="isAdmin">Is Admin:</label>
+  <input type="checkbox" id="isAdmin" [(ngModel)]="isAdmin" />
+</div>
+
+
+@if(shouldBeBool()) {
+    <p>Bool Transform worked</p>
+    <p>{{shouldBeBool()}}</p>
+}

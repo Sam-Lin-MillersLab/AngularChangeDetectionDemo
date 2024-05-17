@@ -1,0 +1,11 @@
+<app-demo-selector [(demoPage)]="demoPage"></app-demo-selector>
+
+@if(demoPage() === 'signal') {
+<app-signal></app-signal>
+} @else if(demoPage() === 'input') {
+<app-input></app-input>
+} @else if (demoPage() === 'view') {
+<app-view></app-view>
+} @else if (demoPage() === 'store') {
+<app-store></app-store>
+}
